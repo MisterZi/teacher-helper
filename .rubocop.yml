@@ -1,0 +1,105 @@
+---
+AllCops:
+  TargetRubyVersion: 2.4.1
+  Include:
+    - 'vendor/gems/**/*'
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+
+Rails:
+  Enabled: true
+
+Rails/HttpPositionalArguments:
+  Exclude:
+  - 'spec/**/*_spec.rb'
+
+Rails/TimeZone:
+  Enabled: false
+
+Rails/Date:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+  - 'spec/**/*_spec.rb'
+
+# Commonly used screens these days easily fit more than 80 characters.
+Metrics/LineLength:
+  Max: 120
+
+# Too short methods lead to extraction of single-use methods, which can make
+# the code easier to read (by naming things), but can also clutter the class
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/ParameterLists:
+  Max: 8
+
+# This is too subjective
+Style/SymbolArray:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/CollectionMethods:
+  Enabled: true
+  PreferredMethods:
+    # inject seems more common in the community.
+    reduce: 'inject'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# Either allow this style or don't. Marking it as safe with parenthesis
+# is silly. Let's try to live without them for now.
+Style/ParenthesesAroundCondition:
+  AllowSafeAssignment: false
+Lint/AssignmentInCondition:
+  AllowSafeAssignment: false
+
+# Fail is an alias of raise. Avoid aliases, it's more cognitive load for no gain.
+# The argument that fail should be used to abort the program is wrong too,
+# there's Kernel#abort for that.
+Style/SignalException:
+  EnforcedStyle: only_raise
+
+# Check with yard instead.
+Style/Documentation:
+  Enabled: false
+
+# aligns the following lines with one level of indentation relative to
+# the start of the line with the method call.
+#
+#     method_call(a,
+#       b)
+#
+Style/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Style/BlockDelimiters:
+  Enabled: false
+
+# free to use alias and alias_method
+Style/Alias:
+  Enabled: false
+
+# Prefer numbers without delimeters
+Style/NumericLiterals:
+  Enabled: false
+
+Style/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Style/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+Style/NumericPredicate:
+  EnforcedStyle: comparison
+
+Style/AndOr:
+  Enabled: true
+  Exclude:
+    - 'app/controllers/**/*'
