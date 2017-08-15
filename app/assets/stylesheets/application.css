@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+
+/* Buffers */
+.buffer-top {
+    margin-top: 20px;
+}
+
+.buffer-bottom {
+    margin-bottom: 20px;
+}
+
+.buffer-both {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

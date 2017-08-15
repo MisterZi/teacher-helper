@@ -10,4 +10,16 @@ class ApplicationController < ActionController::Base
   #     u.permit(:password, :password_confirmation, :current_password)
   #   }
   # end
+
+  def check_for_admin
+    redirect_to root_path unless current_user.is_admin
+  end
+
+  # показывает может ли текущий залогиненный юзер править эту модель
+  def current_user_can_edit?(model)
+    user_signed_in? && (current_user.is_admin ||
+        (model.user == current_user || # если у модели есть юзер и он залогиненный
+            # пробуем у модели взять .event и если он есть, проверяем его юзера
+            (model.try(:post).present? && model.post.user == current_user)))
+  end
 end

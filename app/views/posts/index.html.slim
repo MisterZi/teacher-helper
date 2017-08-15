@@ -1,5 +1,7 @@
 h1 Listing posts
 
+p = link_to 'New Post', new_post_path if current_user.is_admin
+
 table
   thead
     tr
@@ -14,7 +16,3 @@ table
         td = link_to 'Show', post
         td = link_to 'Edit', edit_post_path(post)
         td = link_to 'Destroy', post, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Post', new_post_path

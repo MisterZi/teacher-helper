@@ -1,0 +1,7 @@
+div class="text-center"
+  h1= user.email
+  p= 'Администратор' if user.is_admin
+
+  - if @user == current_user
+    p class="buffer-top"
+      = link_to 'Редактировать профиль', edit_user_path(user), class: 'btn btn-default'

@@ -1,8 +1,31 @@
 p#notice = notice
 
-h1 = post.title
-p = post.body
-= render partial: 'comments/comment', collection: post.comments
+.container
+  .row
+	.well
+	  h1 = post.title
+	  p = post.body
+
+	p Comments
+	.well
+	  = render partial: 'comments/comment', collection: post.comments
+
+.row
+  .col-md-12
+
+
+
+  /<div class="event-comments buffer-top">
+  /
+  /<%= render partial: 'comments/form', locals: {comment: @new_comment || @event.comments.build} %>
+  /
+  /<div class="buffer-both">
+	/<%= render partial: 'comments/comment', collection: @event.comments.except(@new_comment) %>
+  /</div>
+  /</div>
+
+
+
 
 
 = link_to 'Edit', edit_post_path(post)
