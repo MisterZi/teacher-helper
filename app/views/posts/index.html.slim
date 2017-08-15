@@ -1,18 +1,33 @@
 h1 Listing posts
 
-p = link_to 'New Post', new_post_path if current_user.is_admin
+p= link_to 'New Post', new_post_path, class: 'btn btn-primary' if current_user.is_admin
 
-table
-  thead
-    tr
-      th
-      th
-      th
-
-  tbody
+.row
+  .col-md-12
     - posts.each do |post|
-      tr
-		td = post.title
-        td = link_to 'Show', post
-        td = link_to 'Edit', edit_post_path(post)
-        td = link_to 'Destroy', post, data: { confirm: 'Are you sure?' }, method: :delete
+      = link_to post_path(post), class: "linkable" do
+        .list-item
+          .item-content
+            h3= post.title
+            p= post.body
+
+            .item-details
+              .item-comments
+                = "#{post.comments.count} comments "
+              .item-published
+                = "#{(Date.today - post.created_at.to_date).to_i} days ago"
+
+/table class="well"
+/  thead
+/    tr
+/      th
+/      th
+/      th
+/
+/  tbody
+/    - posts.each do |post|
+/      tr
+/		td= post.title
+/        td= link_to 'Show', post
+/        td= link_to 'Edit', edit_post_path(post)
+/        td= link_to 'Destroy', post, data: { confirm: 'Are you sure?' }, method: :delete

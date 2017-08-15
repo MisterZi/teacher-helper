@@ -67,7 +67,7 @@ class PostsController < ApplicationController
   private
 
   def posts
-    @posts ||= Post.all
+    @posts ||= Post.all.order('posts.created_at DESC')
   end
 
   def post
