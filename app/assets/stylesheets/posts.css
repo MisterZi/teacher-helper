@@ -1,3 +1,4 @@
+
 .list-item {
     padding: 20px;
     /*border-width: 1px 0 0 0;*/
@@ -22,6 +23,11 @@
     color: #777;
 }
 
+.item-creator {
+    display: inline-block;
+    color: #777;
+}
+
 .item-published {
     display: inline-block;
     padding-left: 20px;
@@ -36,4 +42,62 @@
 .linkable:hover {
     text-decoration: none;
     color: black;
+}
+
+
+.post-head {
+
+}
+
+.post-date {
+    display: inline-block;
+    color: #989898;
+    font-size: 15px;
+}
+
+.post-menu {
+    float: right;
+    width: 150px;
+}
+
+.post-menu-icon {
+    width: 30px;
+    cursor: pointer;
+    float: right;
+}
+
+.dropmenu {
+    clear: both;
+    padding: 5px 0 5px 0;
+    display: none;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    background: white;
+}
+
+.dropmenu-element {
+    padding: 5px 15px;
+    display: block;
+    text-decoration: none;
+}
+
+.dropmenu-element:hover {
+    text-decoration: none;
+    background: #e7e7e7;
+}
+
+.post-title {
+    margin: 10px 0 12px;
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: bold;
+}
+
+.post-content {
+    word-wrap: break-word
+}
+
+.post-body {
+    padding: 10px 0 10px 0;
+
 }

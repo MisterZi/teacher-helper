@@ -3,15 +3,39 @@ p#notice = notice
 .container
   .row
     .well
-      h1 = post.title
-      p = post.body
+      .post-head
+        .post-date
+          = l post.created_at, format: :short
+        .post-menu
+          .post-menu-icon= image_tag 'drop_menu_icon.png', size: '20x20', alt: 'Действие'
+          .dropmenu
+            = link_to 'Edit', edit_post_path(post), class: 'dropmenu-element'
+            = link_to 'Delete', post, data: {confirm: 'Are you sure?'}, method: :delete, class: 'dropmenu-element'
+        h1.post-title = post.title
+      .post-content
+        .post-body
+          p = post.body
 
 	p Comments
 	.well
 	  = render partial: 'comments/comment', collection: post.comments
 
-.row
-  .col-md-12
+coffee:
+  $ ->
+    $('.post-menu-icon').mouseenter ->
+      $('.dropmenu').fadeIn("fast").mouseleave ->
+        $('.dropmenu').fadeOut("fast")
+
+
+
+
+
+
+
+
+
+/.row
+/  .col-md-12
 
 
 
@@ -26,10 +50,10 @@ p#notice = notice
 
 
 
-
-
-= link_to 'Edit', edit_post_path(post)
-'  |
-= link_to 'Back', posts_path
-'  |
-= link_to 'Delete', post, data: { confirm: 'Are you sure?' }, method: :delete
+/
+/
+/= link_to 'Edit', edit_post_path(post)
+/'  |
+/= link_to 'Back', posts_path
+/'  |
+/= link_to 'Delete', post, data: { confirm: 'Are you sure?' }, method: :delete

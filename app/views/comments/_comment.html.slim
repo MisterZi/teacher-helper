@@ -1,5 +1,8 @@
-p = comment.body
-p
-  span
-	em = comment.user.email
-  em = comment.created_at
+.comments
+  .comments-creator
+    = link_to comment.user.name, user_path(comment.user)
+  .comments-body
+    = comment.body
+  .comments-published
+    = l comment.created_at, format: :short
+
