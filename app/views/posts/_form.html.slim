@@ -6,7 +6,7 @@
         - post.errors.full_messages.each do |message|
           li = message
 
-  = simple_form_for post do |f|
-    = f.input :title
-	= f.input :body
-    = f.button :submit, class: 'btn btn-primary'
+= simple_form_for post do |f|
+  = f.input :title
+  = f.input :body
+  = f.button :submit, class: 'btn btn-primary'

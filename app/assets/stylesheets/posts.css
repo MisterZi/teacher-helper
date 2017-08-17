@@ -45,6 +45,19 @@
 }
 
 
+
+.post-new-icon {
+    cursor: pointer;
+    width: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.post-new-form {
+    display: none;
+    margin-bottom: 10px;
+}
+
 .post-head {
 
 }
@@ -99,5 +112,13 @@
 
 .post-body {
     padding: 10px 0 10px 0;
+
+}
+
+.post-comments-new {
+    border-bottom: 1px solid rgba(170,170,170,.4);
+}
+
+.post-comments-list {
 
 }

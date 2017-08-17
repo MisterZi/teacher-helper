@@ -16,9 +16,13 @@ p#notice = notice
         .post-body
           p = post.body
 
-	p Comments
-	.well
-	  = render partial: 'comments/comment', collection: post.comments
+	h3.text-center= "Comments (#{post.comments.count})"
+  .row
+    .well
+      .post-comments-new
+        = render partial: 'comments/form', locals: {comment: @new_comment || post.comments.build, post: post}
+      .post-comments-list
+        = render partial: 'comments/comment', collection: post.comments.except(@new_comment)
 
 coffee:
   $ ->

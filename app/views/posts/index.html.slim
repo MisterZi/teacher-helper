@@ -1,6 +1,10 @@
-h1 Listing posts
+h1.text-center Listing posts
 
-p= link_to 'New Post', new_post_path, class: 'btn btn-primary' if current_user.is_admin
+.post-new
+  .post-new-icon.center-block
+    = image_tag 'new_document_icon.png', size: '40x40', alt: 'Действие', title: 'Новая новость'
+  .post-new-form
+    = render partial: 'posts/form', locals: {post: Post.new}
 
 .row
   .col-md-12
@@ -19,3 +23,9 @@ p= link_to 'New Post', new_post_path, class: 'btn btn-primary' if current_user.i
                   = 'Today'
                 - else
                   = "#{(Date.today - post.created_at.to_date).to_i} days ago"
+
+coffee:
+  $ ->
+    $('.post-new-icon').click ->
+      $('.post-new-form').slideToggle('fast')
+
