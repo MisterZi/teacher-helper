@@ -1,0 +1,71 @@
+ru:
+  # Перевод моделей
+  activerecord:
+    # Перевод названия моделей
+    models:
+      user: 'Пользователь'
+      post: 'Новость'
+      comment: 'Комментарий'
+
+    # Перевод названий аттрибутов моделей
+    attributes:
+      user:
+        email: 'Email'
+        name: 'Имя'
+        phone: 'Телефон'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+      post:
+        title: 'Название'
+        body: 'Описание'
+      comment:
+        body: 'Комментарий'
+
+  # Перевод сообщений, которые отправляет контроллер
+  controllers:
+    application:
+      denied: 'Вам отказано в доступе'
+      confirmed: 'Вам отказано в доступе. Ожидайте подтверждение профиля от администратора'
+    posts:
+      created: 'Вы создали новую новость'
+      updated: 'Вы обновили новость'
+      destroyed: 'Вы удалили новость'
+    users:
+      updated: 'Вы обновили профиль'
+      updated_state: 'Вы обновили статус доступа пользователя'
+    comments:
+      destroyed: 'Комментарий удален'
+      created: 'Ваш комментарий добавлен'
+      error: 'Ошибка с комментарием'
+
+  # Перевод названия приложения и компании-разработчика
+#  app:
+#    name: 'Шашлыки'
+
+  comments:
+    comment:
+      destroy_confirm: 'Вы уверены, что хотите удалить этот комменатрий?'
+
+#  event_mailer:
+#    comment:
+#      title: 'Новый комментарий'
+#      author: 'Автор'
+#      event: 'Событие'
+#      datetime: 'Состоится'
+#      owner: 'Организатор'
+#    subscription:
+#      title: 'Новая подписка'
+#      name: 'Имя'
+#      email: 'Email'
+#      author: 'Автор'
+#      event: 'Событие'
+#      datetime: 'Состоится'
+#      owner: 'Организатор'
+#    photo:
+#      title: 'Новая фотография'
+#      name: 'Имя'
+#      email: 'Email'
+#      author: 'Автор'
+#      event: 'Событие'
+#      datetime: 'Состоится'
+#      owner: 'Организатор'

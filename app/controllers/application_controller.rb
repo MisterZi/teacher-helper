@@ -18,11 +18,11 @@ class ApplicationController < ActionController::Base
   end
 
   def check_for_admin
-    redirect_to root_path unless current_user.is_admin
+    redirect_to root_path, noties: I18n.t('controllers.application.denied') unless current_user.is_admin
   end
 
   def check_for_confirmed
-    redirect_to root_path unless current_user.is_confirmed
+    redirect_to root_path, noties: I18n.t('controllers.application.confirmed') unless current_user.is_confirmed
   end
 
   # показывает может ли текущий залогиненный юзер править эту модель

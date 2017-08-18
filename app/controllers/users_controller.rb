@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   def update
     if user.update(user_params)
-      redirect_to user #, notice: I18n.t('controllers.users.updated')
+      redirect_to user, notice: I18n.t('controllers.users.updated')
     else
       render :edit
     end
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   def update_state
     user.is_confirmed = params[:state]
     user.save!
-    redirect_to users_path
+    redirect_to users_path, notice: I18n.t('controllers.users.updated_state')
   end
 
   private

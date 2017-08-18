@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @new_comment.save
-        format.html { redirect_to post, notice: 'Comment was successfully created.' }
+        format.html { redirect_to post, notice: I18n.t('controllers.comments.created') }
         format.json { render :show, status: :created, location: post }
       else
         format.html { render :new }
@@ -41,7 +41,7 @@ class CommentsController < ApplicationController
   def destroy
     comment.destroy
     respond_to do |format|
-      format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
+      format.html { redirect_to comments_url, notice: I18n.t('controllers.comments.destroyed') }
       format.json { head :no_content }
     end
   end
