@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :check_for_admin, except: %i[index show]
+  before_action :check_for_confirmed
 
   helper_method :post, :posts
 

@@ -32,6 +32,7 @@ html lang="en"
             li= link_to "Link 2", "/path2"
             li= link_to "Link 3", "/path3"
             - if user_signed_in?
+              li= link_to 'Пользователи', users_path if current_user.is_admin
               li= link_to 'Профиль', current_user
               li= link_to 'Выйти', destroy_user_session_path, method: :delete
             - else

@@ -1,0 +1,19 @@
+.user-new-icon {
+    cursor: pointer;
+    width: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.user-head {
+
+}
+
+.user-head-name {
+    display: inline-block;
+}
+
+.user-head-state {
+    margin-left: 5px;
+    display: inline-block;
+}

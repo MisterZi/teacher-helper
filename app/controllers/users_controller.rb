@@ -1,14 +1,17 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :check_for_admin, only: [:index, :update_state]
 
-  helper_method :user
+  helper_method :user, :users
 
-  # задаем объект @user для шаблонов и экшенов
-  # before_action :set_current_user, except: [:show]
+  # GET /users
+  def index
+    users
+  end
 
   # GET /users/1
   def show
-    @user = User.find(params[:id])
+    user
   end
 
   # GET /users/1/edit
@@ -24,15 +27,25 @@ class UsersController < ApplicationController
     end
   end
 
+  def update_state
+    user.is_confirmed = params[:state]
+    user.save!
+    redirect_to users_path
+  end
+
   private
 
+  def users
+    @users ||= User.all
+  end
+
   def user
-    @user = current_user
+    @user ||= User.find(params[:id])
   end
 
   # Only allow a trusted parameter "white list" through.
   def user_params
-    params.require(:user).permit(:email, :name)
+    params.fetch(:user, {}).permit(:email, :name, :phone, :is_confirmed)
   end
 
 end

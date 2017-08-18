@@ -8,6 +8,11 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :edit, :destroy]
   end
 
-  resources :users, only: [:show, :edit, :update]
+  resources :users do
+    member do
+      get :update_state
+    end
+
+  end
 
 end

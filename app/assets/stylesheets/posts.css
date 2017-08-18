@@ -1,14 +1,5 @@
 
-.list-item {
-    padding: 20px;
-    /*border-width: 1px 0 0 0;*/
-    border-top: 1px solid rgba(170,170,170,.4);
-    text-decoration: none;
-}
 
-.list-item:hover {
-    background-color: #f5f5f5;
-}
 
 .item-content {
     word-wrap: break-word
@@ -34,15 +25,7 @@
     color: #777;
 }
 
-.linkable {
-    text-decoration: none;
-    color: black;
-}
 
-.linkable:hover {
-    text-decoration: none;
-    color: black;
-}
 
 
 

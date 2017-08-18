@@ -2,6 +2,14 @@ div class="text-center"
   h1= user.name
   p= 'Администратор' if user.is_admin
 
-  - if @user == current_user
+  - if user == current_user
     p class="buffer-top"
       = link_to 'Редактировать профиль', edit_user_path(user), class: 'btn btn-default'
+  - elsif current_user.is_admin
+    - if user.is_confirmed
+      p class="buffer-top"
+        = link_to 'Отклонить', { :controller => "users", :action => "update_state", :state => 0}, class: 'btn btn-danger'
+    - else
+      p class="buffer-top"
+        = link_to 'Одобрить', { :controller => "users", :action => "update_state", :state => 1}, class: 'btn btn-success'
+
