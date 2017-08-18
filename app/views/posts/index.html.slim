@@ -17,12 +17,13 @@ h1.text-center Listing posts
 
             .item-details
               .item-comments
-                = "#{post.comments.count} comments "
+                = "#{post.comments.count} #{Russian.p(post.comments.count, 'комментарий', 'комментария', 'комментариев')}"
               .item-published
                 - if Date.today == post.created_at.to_date
-                  = 'Today'
+                  = 'Сегодня'
                 - else
-                  = "#{(Date.today - post.created_at.to_date).to_i} days ago"
+                  - days = (Date.today - post.created_at.to_date).to_i
+                  = "#{days} #{Russian.p(days, 'день', 'дня', 'дней')} назад"
 
 coffee:
   $ ->

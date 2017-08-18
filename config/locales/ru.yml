@@ -42,6 +42,10 @@ ru:
 #  app:
 #    name: 'Шашлыки'
 
+  posts:
+    show:
+      destroy_post: "Вы уверены, что хотите удалить новость?"
+
   comments:
     comment:
       destroy_confirm: 'Вы уверены, что хотите удалить этот комменатрий?'

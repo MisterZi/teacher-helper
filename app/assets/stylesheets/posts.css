@@ -42,7 +42,6 @@
 }
 
 .post-head {
-
 }
 
 .post-date {
@@ -90,12 +89,11 @@
 }
 
 .post-content {
-    word-wrap: break-word
+    word-wrap: break-word;
 }
 
 .post-body {
     padding: 10px 0 10px 0;
-
 }
 
 .post-comments-new {
@@ -103,5 +101,4 @@
 }
 
 .post-comments-list {
-
 }

@@ -8,11 +8,10 @@
 }
 
 .comment-body {
-
 }
 
 .comment-creator {
-
+    display: inline-block;
 }
 
 .comment-menu {
@@ -21,7 +20,6 @@
 }
 
 .comment-menu-icon {
-
 }
 
 .comment-published {

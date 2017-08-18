@@ -1,5 +1,3 @@
-p#notice = notice
-
 .container
   .row
     .well
@@ -10,13 +8,13 @@ p#notice = notice
           .post-menu-icon= image_tag 'drop_menu_icon.png', size: '20x20', alt: 'Действие'
           .dropmenu
             = link_to 'Edit', edit_post_path(post), class: 'dropmenu-element'
-            = link_to 'Delete', post, data: {confirm: 'Are you sure?'}, method: :delete, class: 'dropmenu-element'
+            = link_to 'Delete', post, data: {confirm: t('.destroy_post')}, method: :delete, class: 'dropmenu-element'
         h1.post-title = post.title
       .post-content
         .post-body
           p = post.body
 
-	h3.text-center= "Comments (#{post.comments.count})"
+	h3.text-center= "Комментарии (#{post.comments.count})"
   .row
     .well
       .post-comments-new
@@ -29,35 +27,3 @@ coffee:
     $('.post-menu-icon').mouseenter ->
       $('.dropmenu').fadeIn("fast").mouseleave ->
         $('.dropmenu').fadeOut("fast")
-
-
-
-
-
-
-
-
-
-/.row
-/  .col-md-12
-
-
-
-  /<div class="event-comments buffer-top">
-  /
-  /<%= render partial: 'comments/form', locals: {comment: @new_comment || @event.comments.build} %>
-  /
-  /<div class="buffer-both">
-	/<%= render partial: 'comments/comment', collection: @event.comments.except(@new_comment) %>
-  /</div>
-  /</div>
-
-
-
-/
-/
-/= link_to 'Edit', edit_post_path(post)
-/'  |
-/= link_to 'Back', posts_path
-/'  |
-/= link_to 'Delete', post, data: { confirm: 'Are you sure?' }, method: :delete
