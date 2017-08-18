@@ -1,5 +1,5 @@
 = simple_form_for user do |f|
-  /= render partial: 'partials/form_errors', locals: {model: @user}
+  = render partial: 'partials/form_errors', locals: {model: user}
   div class="form-group"
     = f.label :name
     = f.text_field :name, class: 'form-control'

@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
         format.html { redirect_to post, notice: I18n.t('controllers.comments.created') }
         format.json { render :show, status: :created, location: post }
       else
-        format.html { render :new }
+        format.html { redirect_to post, alert: I18n.t('controllers.comments.error') }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
