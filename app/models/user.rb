@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
   has_many :posts
   has_many :comments
+  has_many :students
 
   validates :name, presence: true, length: { maximum: 35 }
 end
