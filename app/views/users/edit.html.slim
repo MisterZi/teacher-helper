@@ -1,10 +1,9 @@
-div class="page-header"
-  h1 Редактирование профиля
+h1.page-header Редактировать профиль
 
-div class="row"
-  div class="col-md-6 buffer-top"
+.row
+  .col-md-6.buffer-top
 
     == render 'form'
 
-    p class="buffer-top"
+    p.buffer-top
       = link_to 'Сменить пароль', edit_user_registration_path

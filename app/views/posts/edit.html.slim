@@ -1,8 +1,6 @@
-h1 Editing post
+h1.page-header= "#{t('actions.edit')} #{t('activerecord.models.post')}"
 
 == render 'form'
-
-= link_to 'Show', @post
-'  |
-= link_to 'Back', posts_path
+br
+= link_to 'Назад', post
 

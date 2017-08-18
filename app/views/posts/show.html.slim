@@ -7,8 +7,8 @@
         .post-menu
           .post-menu-icon= image_tag 'drop_menu_icon.png', size: '20x20', alt: 'Действие'
           .dropmenu
-            = link_to 'Edit', edit_post_path(post), class: 'dropmenu-element'
-            = link_to 'Delete', post, data: {confirm: t('.destroy_post')}, method: :delete, class: 'dropmenu-element'
+            = link_to t('actions.edit'), edit_post_path(post), class: 'dropmenu-element'
+            = link_to t('actions.delete'), post, data: {confirm: t('.destroy_post')}, method: :delete, class: 'dropmenu-element'
         h1.post-title = post.title
       .post-content
         .post-body
