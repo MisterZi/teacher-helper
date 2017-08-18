@@ -1,9 +1,19 @@
 .comment
   .comment-content
-    .comment-creator
-      = link_to comment.user.name, user_path(comment.user)
+    .comment-head
+      .comment-creator
+        = link_to comment.user.name, user_path(comment.user)
+      - if current_user_can_delete?(comment)
+        .comment-menu
+          = '| '
+          /= link_to( image_tag('edit_icon.png', size: '20x20', alt: 'Действие', title: 'Редактировать'), post_comment_path(comment.post, comment), method: :delete, data: {confirm: t('.destroy_confirm')})
+          /= '   |   '
+          = link_to( image_tag('delete_icon.png', size: '20x20', alt: 'Действие', title: 'Удалить'), post_comment_path(comment.post, comment), method: :delete, data: {confirm: t('.destroy_confirm')})
+          = ' |'
     .comment-body
       = comment.body
     .comment-published
       = l comment.created_at, format: :short
+
+
 

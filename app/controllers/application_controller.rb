@@ -2,6 +2,9 @@ class ApplicationController < ActionController::Base
   # protect_from_forgery with: :exception
 
   before_action :configure_permitted_parameters, if: :devise_controller?
+
+  helper_method :current_user_can_delete?
+
   #
   # protected
   #
@@ -26,7 +29,7 @@ class ApplicationController < ActionController::Base
   end
 
   # показывает может ли текущий залогиненный юзер править эту модель
-  def current_user_can_edit?(model)
+  def current_user_can_delete?(model)
     user_signed_in? && (current_user.is_admin ||
         (model.user == current_user || # если у модели есть юзер и он залогиненный
             # пробуем у модели взять .event и если он есть, проверяем его юзера

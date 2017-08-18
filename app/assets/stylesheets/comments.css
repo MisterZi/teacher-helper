@@ -15,6 +15,15 @@
 
 }
 
+.comment-menu {
+    cursor: pointer;
+    float: right;
+}
+
+.comment-menu-icon {
+
+}
+
 .comment-published {
     color: #777;
 }

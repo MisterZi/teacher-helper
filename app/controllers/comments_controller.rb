@@ -41,7 +41,7 @@ class CommentsController < ApplicationController
   def destroy
     comment.destroy
     respond_to do |format|
-      format.html { redirect_to comments_url, notice: I18n.t('controllers.comments.destroyed') }
+      format.html { redirect_to post_path(post), notice: I18n.t('controllers.comments.destroyed') }
       format.json { head :no_content }
     end
   end
