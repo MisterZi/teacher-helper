@@ -29,7 +29,7 @@ html lang="en"
           ul.nav.navbar-nav
             li= link_to 'Главная', root_path, class: 'navbar-brand'
             li= link_to 'Новости', posts_path
-            li= link_to "Link 2", "/path2"
+            li= link_to 'Ученики', students_path
             li= link_to "Link 3", "/path3"
             - if user_signed_in?
               li= link_to 'Пользователи', users_path if current_user.is_admin
