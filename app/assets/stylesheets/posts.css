@@ -5,6 +5,10 @@
     word-wrap: break-word
 }
 
+.item-content img {
+    width: 50%;
+}
+
 .item-details {
     width: 50%;
 }
@@ -94,6 +98,10 @@
 
 .post-body {
     padding: 10px 0 10px 0;
+}
+
+.post-body img{
+    width: 50%;
 }
 
 .post-comments-new {

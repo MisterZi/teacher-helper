@@ -24,8 +24,10 @@ gem 'coffee-rails', '~> 4.2'
 gem 'slim-rails'
 gem 'jquery-rails'
 
+gem 'redcarpet'
+gem 'rails-bootstrap-markdown'
 gem 'simple_form'
-gem 'twitter-bootstrap-rails'
+gem 'bootstrap-sass', '~> 3.3.6'
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'

@@ -1,4 +1,4 @@
 = simple_form_for post do |f|
   = f.input :title
-  = f.input :body
+  = f.input :body, :input_html => {:rows => 20, :placeholder => ' Введите текст', 'data-provide' => 'markdown' }
   = f.button :submit, class: 'btn btn-primary'

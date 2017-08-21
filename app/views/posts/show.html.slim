@@ -12,7 +12,7 @@
         h1.post-title = post.title
       .post-content
         .post-body
-          p = post.body
+          p = markdown(post.body)
 
 	h3.text-center= "Комментарии (#{post.comments.count})"
   .row

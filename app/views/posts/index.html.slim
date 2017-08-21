@@ -13,7 +13,7 @@ h1.text-center Новости
         .list-item
           .item-content
             h3= post.title
-            p= post.body
+            p= markdown(post.body)
 
             .item-details
               .item-comments
