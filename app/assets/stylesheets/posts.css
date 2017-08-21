@@ -1,14 +1,5 @@
 
 
-
-.item-content {
-    word-wrap: break-word
-}
-
-.item-content img {
-    width: 50%;
-}
-
 .item-details {
     width: 50%;
 }
@@ -94,6 +85,10 @@
 
 .post-content {
     word-wrap: break-word;
+}
+
+.post-content img {
+    width: 50%;
 }
 
 .post-body {

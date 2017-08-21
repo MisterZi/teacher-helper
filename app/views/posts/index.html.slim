@@ -11,7 +11,7 @@ h1.text-center Новости
     - posts.each do |post|
       = link_to post_path(post), class: 'linkable' do
         .list-item
-          .item-content
+          .post-content
             h3= post.title
             p= markdown(post.body)
 

@@ -1,10 +1,23 @@
 h1 Listing students
 
-.row
-  .col-md-12
-    .table
-      .tr
+/.row
+/  .col-md-12
+/    .table
+/      .tr
+/    - students.each do |student|
+/      th
+
+- fields = %w[Имя Родители]
+
+table.table.table-hover
+  thead.bordered-black
+    tr
+      - fields.each do |field|
+        th = field
     - students.each do |student|
+      tr
+        th = student.name
+        th = student.user.name
 
 
 = link_to 'New Student', new_student_path

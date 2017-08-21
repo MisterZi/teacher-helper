@@ -6,14 +6,13 @@ h1.text-center Пользователи
     - users.each do |user|
       = link_to user, class: 'linkable' do
         .list-item
-          .item-content
-            .user-head
-              .user-head-name
-                h3= user.name
-              .user-head-state
-                - if user.is_confirmed
-                  = image_tag 'confirmed_icon.png', size: '20x20', alt: 'Одобрено', title: 'Одобрен'
-                - else
-                  = image_tag 'rejected_icon.png', size: '20x20', alt: 'Отклонено', title: 'Отклонен'
-            p= "Email: #{user.email}"
-            p= "Телефон: #{user.phone}"
+          .user-head
+            .user-head-name
+              h3= user.name
+            .user-head-state
+              - if user.is_confirmed
+                = image_tag 'confirmed_icon.png', size: '20x20', alt: 'Одобрено', title: 'Одобрен'
+              - else
+                = image_tag 'rejected_icon.png', size: '20x20', alt: 'Отклонено', title: 'Отклонен'
+          p= "Email: #{user.email}"
+          p= "Телефон: #{user.phone}"
