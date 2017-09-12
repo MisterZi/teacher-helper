@@ -28,6 +28,7 @@ gem 'redcarpet'
 gem 'rails-bootstrap-markdown'
 gem 'simple_form'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-table-rails'
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'

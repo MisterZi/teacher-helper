@@ -1,6 +1,14 @@
-p#notice = notice
+.container-small
+  div class="text-center"
+    h1= "#{student.name} #{student.surname}"
+
+  p= "День рождения: #{l student.birthday.to_date}"
+  p
+    = "Родитель: "
+    = link_to student.user.name, user_path(student.user)
 
 
-= link_to 'Edit', edit_student_path(@student)
-'  |
-= link_to 'Back', students_path
+
+  /- if user == current_user
+  /  p class="buffer-top"
+  /    = link_to 'Редактировать профиль', edit_user_path(user), class: 'btn btn-default'

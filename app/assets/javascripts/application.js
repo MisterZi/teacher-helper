@@ -15,4 +15,6 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require bootstrap-markdown-bundle
+//= require bootstrap-table
+//= require locale/bootstrap-table-ru-RU
 //= require_tree .

@@ -16,12 +16,17 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "bootstrap-markdown-overide";
+@import "bootstrap-table";
 @import "comments";
 @import "posts";
 @import "students";
 @import "users";
 
 
+.container-small {
+    @extend .container;
+    width: 585px;
+}
 
 
 /* Buffers */
@@ -37,6 +42,9 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+
+
 
 .linkable {
     text-decoration: none;

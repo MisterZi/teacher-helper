@@ -1,7 +1,13 @@
-= simple_form_for(@student) do |f|
-  = f.error_notification
+= simple_form_for student do |f|
+  = render partial: 'partials/form_errors', locals: {model: student}
+  div class="form-group"
+    = f.input :surname
+  div class="form-group"
+    = f.input :name
+  div class="form-group"
+    = f.input :birthday
 
-  .form-inputs
-
-  .form-actions
-    = f.button :submit
+  div class="actions"
+    = f.submit 'Сохранить', class: 'btn btn-primary'
+    = ' или '
+    = link_to 'вернуться', :back

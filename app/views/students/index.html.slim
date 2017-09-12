@@ -1,23 +1,25 @@
-h1 Listing students
+h1.text-center Ученики
+br
 
-/.row
-/  .col-md-12
-/    .table
-/      .tr
-/    - students.each do |student|
-/      th
 
-- fields = %w[Имя Родители]
+- fields = ['Фамилия', 'Имя', 'День рождения', 'Родитель']
 
-table.table.table-hover
-  thead.bordered-black
-    tr
-      - fields.each do |field|
-        th = field
-    - students.each do |student|
+.container
+  table data-toggle="table"
+    thead
       tr
-        th = student.name
-        th = student.user.name
+        th.text-center #
+        - fields.each do |field|
+          th data-sortable="true" = field
+        th
+    - students.each_with_index do |student, i|
+      tr
+        td.text-center = i+1
+        td= student.surname
+        td= student.name
+        td= l student.birthday.to_date
+        td= link_to student.user.name, user_path(student.user)
+        td.text-center= link_to( image_tag('eye_icon.png', size: '20x20', alt: 'Действие', title: 'Просмотреть'), student )
 
 
 = link_to 'New Student', new_student_path
